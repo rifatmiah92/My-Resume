@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer components {
+  .resume-container {
+    @apply max-w-[850px] mx-auto bg-white shadow-[0_20px_50px_-20px_rgba(0,0,0,0.1)] p-12 relative overflow-hidden;
+    min-height: 297mm; /* A4 aspect ratio height approx */
+  }
+}
+
+@media print {
+  .no-print, 
+  .no-print *,
+  button,
+  [fixed] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body {
+    background-color: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .min-h-screen {
+    background-color: white !important;
+    padding: 0 !important;
+  }
+  
+  .resume-container {
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Force layouts to stay flex/grid in print */
+  .flex { display: flex !important; }
+  .flex-row { flex-direction: row !important; }
+  .flex-col { flex-direction: column !important; }
+  .grid { display: grid !important; }
+  .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .items-center { align-items: center !important; }
+  .justify-between { justify-content: space-between !important; }
+
+  /* Keep background colors and colors in PDF */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Force font display if needed */
+  h1, h2, h3 {
+    font-family: "Outfit", sans-serif !important;
+  }
+}
