@@ -59,7 +59,7 @@ export default function App() {
             {/* Portfolio and LeetCode Links */}
             <div className="flex flex-row flex-wrap print:flex print:flex-row print:flex-wrap gap-x-3 gap-y-1 text-[8.5px] font-bold uppercase tracking-widest text-slate-700">
               <a 
-                href="https://rifat-miah-92.netlify.app/" 
+                href="https://rifat-miah-2003.netlify.app/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-1.5 hover:text-slate-900 transition-colors group"
